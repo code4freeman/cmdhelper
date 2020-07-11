@@ -1,0 +1,24 @@
+{
+  "name": "cmdhelper",
+  "version": "1.0.0",
+  "description": "见过很多库，但他们都有依赖其他包，说到底就想自己研究下底层实现原理。  \r 不求万金油，简单稳定能用就成。",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilindog/cmdhelper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilindog/cmdhelper/issues"
+  },
+  "homepage": "https://github.com/lilindog/cmdhelper#readme"
+}
