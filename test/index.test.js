@@ -14,6 +14,7 @@ describe("cmdhelper 测试用例：", () => {
             }
         });  
     }).timeout(60 * 1000);
+    
     it ("confirm 测试", done => {
         !async function () {
             const res = await cmdhelper.confirm("确定or取消？", {confirmText: "我确定", cancelText: "算了，我取消"});
@@ -22,5 +23,13 @@ describe("cmdhelper 测试用例：", () => {
                 done();
             }
         }();
+    }).timeout(60 * 1000);
+
+    it("测试进度条：", done => {
+        const stop = cmdhelper.loading("测试架子啊动画，请稍等");
+        setTimeout(() => {
+            stop("加载动画停止");
+            done();
+        }, 5000);
     }).timeout(60 * 1000);
 });
