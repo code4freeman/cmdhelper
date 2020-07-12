@@ -25,11 +25,30 @@ describe("cmdhelper 测试用例：", () => {
         }();
     }).timeout(60 * 1000);
 
-    it("测试进度条：", done => {
-        const stop = cmdhelper.loading("测试架子啊动画，请稍等");
+    it("测试加载动画：", done => {
+        const stop = cmdhelper.loading("请稍等");
         setTimeout(() => {
             stop("加载动画停止");
             done();
         }, 5000);
+    }).timeout(60 * 1000);
+
+    it("测试进度条：", done_ => {
+        const {
+            done,
+            step
+        } = cmdhelper.progress(50);
+        let 
+        index = 0,
+        t = setInterval(() => {
+            index ++;
+            if (index >= 100) {
+                done(["恭喜您，下载完成！"]);
+                clearInterval(t);
+                done_();
+            } else {
+                step(index, [`当前进度：${index}%`, "不要慌，很快的"]);
+            }
+        }, 200);
     }).timeout(60 * 1000);
 });

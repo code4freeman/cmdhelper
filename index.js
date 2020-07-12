@@ -1,11 +1,13 @@
 /**
  * 命令行工具开发辅助工具函数集合 
- */;
+ * 具体的使用说明详见： https://github.com/lilindog/cmdhelper
+ */
 
 module.exports = nameSpace = Object.create(null);
 
 const select = require("./lib/select");
 const loading = require("./lib/loading");
+const progress = require("./lib/progress");
 
 /**
  * 单选选择
@@ -41,3 +43,10 @@ nameSpace["confirm"] = async (title = "确定？", options = {confirmText: "确�
  */
 nameSpace["loading"] = loading;
     
+/**
+ * 进度条
+ * 
+ * @param {Number} length 进度条整体长度
+ * @return {Object} // { stop([String[]]), step(Number [, String[]]) }
+ */
+nameSpace["progress"] = progress;

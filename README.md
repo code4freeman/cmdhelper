@@ -69,5 +69,24 @@ setTimeout(() => {
 ![](./doc/img/loading.gif)
 
 ### 4. 进度条
-
-*正在实现中...*
+```js
+const cmdhelper = require("cmdhelper");
+const {
+    done,
+    step
+} = cmdhelper.progress(50);
+let 
+index = 0,
+t = setInterval(() => {
+    index ++;
+    if (index >= 100) {
+        //这里用step（）也可以，只要传参大于等于100就会完成进度条并不再受控
+        done(["下载完成！"]);
+        clearInterval(t);
+    } else {
+        step(index, [`当前进度：${index}%`]);
+    }
+}, 200);    
+```
+效果示例：   
+![](./doc/img/progress.gif)
