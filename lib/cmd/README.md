@@ -1,3 +1,5 @@
+# 参数声明模板语法
+
 ## 必选参数声明
 
  <-d, description> string 指定原路径
@@ -11,4 +13,11 @@
  标签名  在parm中key 类型    默认值   描述文本
 
 
- 
+# 命令格式说明
+
+## 选项
+
+ --option 或者 --option=value
+
+## 参数
+ -param value 
