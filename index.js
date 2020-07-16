@@ -8,6 +8,8 @@ module.exports = nameSpace = Object.create(null);
 const select = require("./lib/select");
 const loading = require("./lib/loading");
 const progress = require("./lib/progress");
+const question = require("./lib/question");
+const cmd = require("./lib/cmd");
 
 /**
  * 单选选择
@@ -50,3 +52,20 @@ nameSpace["loading"] = loading;
  * @return {Object} // { stop([String[]]), step(Number [, String[]]) }
  */
 nameSpace["progress"] = progress;
+
+/**
+ * 问题
+ * 
+ * @param {String} questionMessage 问题
+ * @param {Funct6ion} cb 可选，问题答案回调, 如果缺省则函数返回答案
+ */
+nameSpace["question"] = question;
+
+/**
+ * 命令行工具 
+ * 
+ * @param {String} name 可选，命令行名字，如：cli copy -i xxx -o xxx, 这里的copy就是name
+ * @param {Array}  descripts 命令行参数描述数组，详见命令行描述说明 "./lib/cmd/README.md"
+ * @param {Function} cb 当命令行名字匹配，就会执行这个回调，参数为命令行描述参数集合对象
+ */
+nameSpace["cmd"] = cmd;

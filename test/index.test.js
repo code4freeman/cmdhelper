@@ -1,4 +1,5 @@
 const cmdhelper = require("../index");
+const cmd = require("../lib/cmd");
 
 describe("cmdhelper 测试用例：", () => {
     it("select 测试：", done => {
@@ -51,4 +52,12 @@ describe("cmdhelper 测试用例：", () => {
             }
         }, 200);
     }).timeout(60 * 1000);
+
+    it ("问题测试", done => {
+        cmdhelper.question("请随意输入，按回车确定", res => {
+            console.log("您输入的是：" + res);
+            done();
+        });
+    }).timeout(60 * 1000);
+
 });
