@@ -60,4 +60,21 @@ describe("cmdhelper 测试用例：", () => {
         });
     }).timeout(60 * 1000);
 
+    it("多选测试", done => {
+        cmdhelper.checkbox(
+            "选择你喜欢的零食(空格键选择/取消选择，回车键确定)：",
+            [
+                {label: "奥利奥"},
+                {label: "卫龙辣条"},
+                {label: "养乐多"},
+                {label: "大波浪薯片"}
+            ],
+            res => {
+                console.log("您选择的是：");
+                res.forEach(i => console.log(i));
+                done();
+            }
+        );
+    }).timeout(60 * 1000);
+
 });
