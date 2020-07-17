@@ -90,3 +90,32 @@ t = setInterval(() => {
 ```
 效果示例：   
 ![](./doc/img/progress.gif)
+
+### 5. 多选框
+```js
+//promise写法
+!async function () {
+    const res = await cmdhelper.checkbox(
+        "多选标题：",
+        [
+            {label: "选项1"},
+            {label: "选项2"}
+        ]
+    );
+    console.log(res);
+}();
+
+//回调函数写法
+cmdhelper.chekbox(
+    "多选标题：",
+    [
+        {label: "选项1"},
+        {label: "选项2"}
+    ],
+    res => {
+        console.log(res);
+    }
+);
+```
+效果示例：   
+![](../cmdhelper/doc/img/checkbox.gif)

@@ -6,6 +6,7 @@
 module.exports = nameSpace = Object.create(null);
 
 const select = require("./lib/select");
+const checkbox = require("./lib/checkbox");
 const loading = require("./lib/loading");
 const progress = require("./lib/progress");
 const question = require("./lib/question");
@@ -19,6 +20,16 @@ const cmd = require("./lib/cmd");
  * @param {Function} cb 选择确定回调函数，可选，没有则返回promise
  */
 nameSpace["select"] = select;
+
+/**
+ * 多选框 
+ * 
+ * @param {String} title 标题
+ * @param {Array} options 选项数组
+ * @param {Function} cb 选择完成后的回调函数，值为选择的选项
+ */
+nameSpace["checkbox"] = checkbox;
+
 
 /**
  * 确认
