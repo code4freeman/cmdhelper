@@ -1,8 +1,7 @@
 const { cmd } = require("../index");
 
-cmd([
-    "<-a, age>  number 年纪",
-    "<-n, name> string 姓名",
-], function () {
-    console.log(arguments);
+cmd("copy", [
+    "[-n, name]> string lilin  姓名",
+], params => {
+    console.log(params);
 });
