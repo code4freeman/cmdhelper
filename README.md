@@ -3,9 +3,13 @@
 见过很多库，但他们都有依赖其他包，说到底就想自己研究下底层实现原理。  
 不求万金油，简单稳定能用就成。   
 
+***
+
 ## 测试用例
 需要事先全局安装好mocha  
 运行 ```npm test``` 即可
+
+***
 
 ## 使用场景示例
 
@@ -119,3 +123,28 @@ cmdhelper.chekbox(
 ```
 效果示例：   
 ![](../cmdhelper/doc/img/checkbox.gif)
+
+***
+
+## 命令行工具
+
+这里边提供了一个命令行工具，能够声明参数自动校验。  
+参数声明模板语法请看[这里](./lib/cmd/README.md)
+
+示例：   
+```js
+const { cmd } = require("cmdhelper");
+
+cmd([
+    "<-n, name> string `输入的名字`"
+], params => {
+    console.log(params);
+})
+```
+命令行运行：   
+```bash
+node index.js -n 王德发
+```
+输出：   
+> {name: "王德发"}
+
