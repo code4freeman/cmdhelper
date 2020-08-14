@@ -27,11 +27,14 @@ describe("cmdhelper 测试用例：", () => {
     }).timeout(60 * 1000);
 
     it("测试加载动画：", done => {
-        const stop = cmdhelper.loading("请稍等");
+        const { stop, info } = cmdhelper.loading("请稍等");
         setTimeout(() => {
             stop("加载动画停止");
             done();
         }, 5000);
+        setTimeout(() => {
+            info("状态显示");
+        }, 2000);
     }).timeout(60 * 1000);
 
     it("测试进度条：", done_ => {
