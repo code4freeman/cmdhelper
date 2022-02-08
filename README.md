@@ -64,7 +64,7 @@ const { confirm } = require("cmdhelper");
 ```js
 const { loading } = require("cmdhelper");
 
-const done = loading("正在下载AV");
+const { stop: done, info } = loading("正在下载AV");
 setTimeout(() => {
     done("您的AV下载完成");
 }, 5000);
