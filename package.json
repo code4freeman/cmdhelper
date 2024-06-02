@@ -1,6 +1,6 @@
 {
   "name": "cmdhelper",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "见过很多库，但他们都有依赖其他包，说到底就想自己研究下底层实现原理。  \r 不求万金油，简单稳定能用就成。",
   "main": "index.js",
   "directories": {
