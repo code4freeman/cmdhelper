@@ -2,7 +2,7 @@ const cmdhelper = require("../index");
 const cmd = require("../lib/cmd");
 
 describe("cmdhelper 测试用例：", () => {
-    it("select 测试：", done => {
+     it("select 测试：", done => {
         cmdhelper.select("选择测试选项:", [
             {label: "测试选项1"},
             {label: "测试选项2"},
@@ -13,8 +13,8 @@ describe("cmdhelper 测试用例：", () => {
                 console.log("您选择了：" + res.label);
                 done();
             }
-        });  
-    }).timeout(60 * 1000);
+        }); 
+     }).timeout(60 * 1000);
     
     it ("confirm 测试", done => {
         !async function () {
@@ -45,15 +45,15 @@ describe("cmdhelper 测试用例：", () => {
         let 
         index = 0,
         t = setInterval(() => {
-            index ++;
+            index += 10;
             if (index >= 100) {
-                done(["恭喜您，下载完成！"]);
+                done(["恭喜您，下载完成！\n"]);
                 clearInterval(t);
                 done_();
             } else {
                 step(index, [`当前进度：${index}%`, "不要慌，很快的"]);
             }
-        }, 200);
+        }, 100);
     }).timeout(60 * 1000);
 
     it ("问题测试", done => {
